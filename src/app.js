@@ -15,13 +15,13 @@ class App extends React.Component {
 
   showJake() {
     this.setState({
-      isJakeVisible: true
+      isJakevisible: true
     })
   }
 
   hideJake() {
     this.setState({
-      isJakeVisible: false
+      isJakevisible: false
     })
   }
 
