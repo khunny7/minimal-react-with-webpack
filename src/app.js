@@ -6,23 +6,27 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      isJakeVisible: false
+      jakeCount: 0,
+    }
+  }
+
+  addJake = () => {
+    this.setState({
+      jakeCount: this.state.jakeCount++,
+    });
+  }
+
+  showJakes = () => {
+    var rows = [];
+    for (let i = 0; i < this.state.jakeCount; i++) {
+      rows.push(<img src={JakeTheDog}></img>);
     }
 
-    this.showJake = this.showJake.bind(this)
-    this.hideJake = this.hideJake.bind(this)
+    return (<div>{rows}</div>);
   }
 
-  showJake() {
-    this.setState({
-      isJakeVisible: true
-    })
-  }
-
-  hideJake() {
-    this.setState({
-      isJakeVisible: false
-    })
+  clearJake = () => {
+    this.jakeCount = 0;
   }
 
   render() {
@@ -43,7 +47,15 @@ class App extends React.Component {
         <h1 className="tomato-color">
           {this.props.title}
         </h1>
-        {showJakeComponent()}
+        <h2>
+          1. Only one jake should show up when we click Add Jake Button
+        </h2>
+        <h2>
+          2. Clear Jake should clear Jakes
+        </h2>
+        <button onClick={this.addJake}>Add Jake</button>
+        <button onClick={this.clearJake}>Clear Jake</button>
+        {this.showJakes()}
       </div>
     )
   }
