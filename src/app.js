@@ -1,5 +1,5 @@
 import React from 'react'
-import JakeTheDog from '../assets/jake.png'
+import JakeTheDog from '../../assets/jake.png'
 
 class App extends React.Component {
   constructor(props) {
