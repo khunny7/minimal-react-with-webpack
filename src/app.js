@@ -1,5 +1,6 @@
 import React from 'react'
 import JakeTheDog from '../assets/jake.png'
+import { SectionWrap } from './sectionWrap';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,13 +16,13 @@ class App extends React.Component {
 
   showJake() {
     this.setState({
-      isJakevisible: true
+      isJakeVisible: true
     })
   }
 
   hideJake() {
     this.setState({
-      isJakevisible: false
+      isJakeVisible: false
     })
   }
 
@@ -43,6 +44,15 @@ class App extends React.Component {
         <h1 className="tomato-color">
           {this.props.title}
         </h1>
+        <SectionWrap title="Heeya is awesome">
+          Heeya is awesome
+        </SectionWrap>
+        <SectionWrap title="Buy our cosmetics">
+          Cosmetics
+        </SectionWrap>
+        <SectionWrap title="We do not sell dogs">
+          <img src={JakeTheDog}></img>
+        </SectionWrap>
         {showJakeComponent()}
       </div>
     )
